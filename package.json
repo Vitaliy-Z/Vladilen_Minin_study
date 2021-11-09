@@ -1,0 +1,15 @@
+{
+  "name": "webpack_rollup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "author": "Vitaliy_Zvieriev",
+  "license": "ISC",
+  "dependencies": {
+    "rollup": "^2.59.0"
+  }
+}
