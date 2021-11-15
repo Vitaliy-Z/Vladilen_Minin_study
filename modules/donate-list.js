@@ -4,6 +4,13 @@ export class DonateList {
   constructor(donates = []) {
     this.#donates = donates;
   }
+  updateDonates(updatedDonates) {
+    const donatesList = document.querySelector(".donates-container__donates");
+    donatesList.innerHTML = "";
+    updatedDonates.forEach((item) =>
+      donatesList.append(this.#createDonateItem(item))
+    );
+  }
   #createTitle() {
     const title = document.createElement("h2");
     title.className = "donates-container__title";
