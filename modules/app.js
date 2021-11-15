@@ -1,10 +1,10 @@
+import { DonateForm } from "./donate-form";
+
 export default class App {
   constructor() {}
 
   run() {
-    const text = document.createElement("p");
-    text.textContent = "Hello World";
-
-    document.body.append(text);
+    const donateForm = new DonateForm();
+    document.body.append(donateForm.render());
   }
 }
