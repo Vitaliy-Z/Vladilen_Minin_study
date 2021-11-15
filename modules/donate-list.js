@@ -1,4 +1,5 @@
 import { Settings as set } from "../core/constants/settings";
+import { getFormattedTime as getTime } from "../core/utils";
 
 export class DonateList {
   #donates;
@@ -22,7 +23,8 @@ export class DonateList {
   #createDonateItem(item) {
     const donateItem = document.createElement("div");
     donateItem.className = "donate-item";
-    donateItem.innerHTML = `${item.date} - <b>${item.amount}${set.currency}</b>`;
+    const date = getTime(item.date);
+    donateItem.innerHTML = `${date} - <b>${item.amount}${set.currency}</b>`;
     return donateItem;
   }
   #createDonateList() {
