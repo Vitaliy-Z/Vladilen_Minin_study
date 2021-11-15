@@ -1,3 +1,5 @@
+import { Settings as set } from "../core/constants/settings";
+
 export class DonateList {
   #donates;
 
@@ -20,7 +22,7 @@ export class DonateList {
   #createDonateItem(item) {
     const donateItem = document.createElement("div");
     donateItem.className = "donate-item";
-    donateItem.innerHTML = `${item.date} - <b>${item.amount}$</b>`;
+    donateItem.innerHTML = `${item.date} - <b>${item.amount}${set.currency}</b>`;
     return donateItem;
   }
   #createDonateList() {

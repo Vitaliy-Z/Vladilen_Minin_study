@@ -1,3 +1,5 @@
+import { Settings as set } from "../core/constants/settings";
+
 export class DonateForm {
   constructor(totalAmount, createNewDonate) {
     this.totalAmount = totalAmount;
@@ -6,7 +8,7 @@ export class DonateForm {
 
   updateTotalAmount(newAmount) {
     const total = document.querySelector("#total-amount");
-    total.textContent = `${newAmount}$`;
+    total.textContent = newAmount + set.currency;
   }
   #createForm() {
     const form = document.createElement("form");
@@ -26,13 +28,13 @@ export class DonateForm {
   #createTitle() {
     const title = document.createElement("h1");
     title.id = "total-amount";
-    title.textContent = `${this.totalAmount}$`;
+    title.textContent = this.totalAmount + set.currency;
     return title;
   }
   #createLabel() {
     const label = document.createElement("label");
     label.className = "donate-form__input-label";
-    label.textContent = "Введите сумму в $";
+    label.textContent = `Введите сумму в ${set.currency}`;
     label.append(this.#createInput());
     return label;
   }
